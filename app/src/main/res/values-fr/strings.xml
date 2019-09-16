@@ -3,4 +3,6 @@
     <string name="app_name">AndroidAssignments</string>
     <string name="hello_world">Bonjour!</string>
     <string name="ButtonText">Je suis button</string>
+    <string name="loginButton">Nom</string>
+    <string name="password">mot de passe</string>
 </resources>
