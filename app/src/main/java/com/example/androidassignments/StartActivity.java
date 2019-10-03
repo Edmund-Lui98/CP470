@@ -3,54 +3,19 @@ package com.example.androidassignments;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
-
-public class LoginActivity extends AppCompatActivity {
-
-    EditText user, pass;
-    Button login;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
-    Boolean saveLogin;
+public class StartActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_main);
         final String ACTIVITY_NAME = "CreateActivity";
         Log.i(ACTIVITY_NAME, "In onCreate()");
-
-        user = (EditText) findViewById(R.id.login1);
-        pass = (EditText) findViewById(R.id.password1);
-        login = (Button) findViewById(R.id.LoginButton);
-        sharedPreferences = getSharedPreferences("loginref",MODE_PRIVATE);
-        editor = sharedPreferences.edit();
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                login();
-            }
-        });
-
-        user.setText(sharedPreferences.getString("username",null));
-
-    }
-
-
-    public void login() {
-        String username = user.getText().toString();
-
-        editor.putBoolean("savelogin",true);
-        editor.putString("username",username);
-        editor.commit();
-
-
     }
 
     protected void onResume() {
@@ -84,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onClickLogIn(View view) {
-        Intent myIntent = new Intent(this, StartActivity.class);
+        Intent myIntent = new Intent(this, ListItemsActivity.class);
         this.startActivity(myIntent);
     }
 }
