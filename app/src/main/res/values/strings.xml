@@ -7,5 +7,12 @@
     <string name="radioButton">radioButton</string>
     <string name="checkBox">checkBox</string>
     <string name="switch1">what does this do?</string>
-
+    <string name="dialog_message">Are you sure you want to quit?</string>
+    <string name="dialog_title">Exit</string>
+    <string name="ok">yes</string>
+    <string name="cancel">no</string>
+    <string name="switch_on">Switch is ON</string>
+    <string name="switch_off">Switch is OFF</string>
+    <string name="exit">exiting</string>
+    <string name="buttonx">Button</string>
 </resources>

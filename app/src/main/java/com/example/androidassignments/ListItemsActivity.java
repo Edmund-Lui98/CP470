@@ -1,11 +1,26 @@
 package com.example.androidassignments;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.ImageButton;
+import android.widget.RadioGroup;
+import android.widget.Switch;
+import android.widget.Toast;
 
 public class ListItemsActivity extends AppCompatActivity {
+
+    ImageButton camButton;
+    Switch s;
+    CheckBox checkbox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,6 +28,60 @@ public class ListItemsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_items);
         final String ACTIVITY_NAME = "CreateActivity";
         Log.i(ACTIVITY_NAME, "In onCreate()");
+
+        camButton = findViewById(R.id.imageButton);
+        camButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivity(intent);
+                //make the imagebutton an image of what was just taken...
+            }
+        });
+
+        s = findViewById(R.id.switch1);
+        s.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    Toast.makeText(ListItemsActivity.this, R.string.switch_on,Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(ListItemsActivity.this, R.string.switch_off,Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        checkbox = findViewById(R.id.checkBox);
+        checkbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkbox.isChecked()) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ListItemsActivity.this);
+                    // 2. Chain together various setter methods to set the dialog characteristics
+                    builder.setMessage(R.string.dialog_message)
+
+                            .setTitle(R.string.dialog_title)
+                            .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    Intent resultIntent = new Intent(  );
+                                    resultIntent.putExtra("Response", "Here is my response");
+                                    setResult(ListItemsActivity.RESULT_OK, resultIntent);
+                                    Toast.makeText(ListItemsActivity.this,R.string.exit,Toast.LENGTH_LONG).show();
+                                    finish();
+
+                                }
+                            })
+                            .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // User cancelled the dialog
+                                }
+                            })
+                            .show();
+
+                }
+            }
+        });
     }
 
     protected void onResume() {

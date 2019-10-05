@@ -8,4 +8,15 @@
     <string name="radioButton">boutonRadio</string>
     <string name="checkBox">case à cocher</string>
     <string name="switch1">quest-ce que cela fait?</string>
+    <string name="dialog_message">Êtes-vous sûr de vouloir quitter?</string>
+    <string name="dialog_title">Sortie</string>
+    <string name="ok">oui</string>
+    <string name="cancel">non</string>
+    <string name="switch_on">Commutateur est SUR</string>
+    <string name="switch_off">interrupteur est ETEINT</string>
+    <string name="exit">sortant</string>
+    <string name="buttonx">Button</string>
+
+
+
 </resources>
