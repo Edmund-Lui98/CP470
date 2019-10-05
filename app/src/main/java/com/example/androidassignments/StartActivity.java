@@ -13,6 +13,7 @@ import java.util.List;
 public class StartActivity extends AppCompatActivity {
 
     Button loginButton;
+    Button start_chat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,14 @@ public class StartActivity extends AppCompatActivity {
                 Intent intent = new Intent(StartActivity.this, ListItemsActivity.class);
                 startActivityForResult(intent, 10);
 
+            }
+        });
+
+        start_chat = findViewById(R.id.start_chat);
+        start_chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i(ACTIVITY_NAME, "User clicked Start Chat");
             }
         });
     }

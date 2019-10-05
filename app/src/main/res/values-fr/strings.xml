@@ -16,7 +16,5 @@
     <string name="switch_off">interrupteur est ETEINT</string>
     <string name="exit">sortant</string>
     <string name="buttonx">Button</string>
-
-
-
+    <string name="start_chat">Démarrer la discussion</string>
 </resources>

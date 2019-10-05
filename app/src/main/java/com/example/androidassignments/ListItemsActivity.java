@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -22,6 +23,8 @@ public class ListItemsActivity extends AppCompatActivity {
     Switch s;
     CheckBox checkbox;
 
+    int REQUEST_IMAGE_CAPTURE = 10;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,15 +33,6 @@ public class ListItemsActivity extends AppCompatActivity {
         Log.i(ACTIVITY_NAME, "In onCreate()");
 
         camButton = findViewById(R.id.imageButton);
-        camButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivity(intent);
-                //make the imagebutton an image of what was just taken...
-            }
-        });
 
         s = findViewById(R.id.switch1);
         s.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -82,6 +76,22 @@ public class ListItemsActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    public void openCameraIntent(View view) {
+        Intent takePic = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePic.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePic,REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            camButton.setImageBitmap(imageBitmap);
+        }
     }
 
     protected void onResume() {
