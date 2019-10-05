@@ -15,4 +15,5 @@
     <string name="switch_off">Switch is OFF</string>
     <string name="exit">exiting</string>
     <string name="buttonx">Button</string>
+    <string name="start_chat">Start Chat</string>
 </resources>

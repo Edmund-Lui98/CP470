@@ -37,6 +37,7 @@
         android:layout_height="37dp"
         android:layout_row="1"
         android:layout_column="1"
+        android:onClick="openCameraIntent"
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
 </GridLayout>
