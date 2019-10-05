@@ -27,9 +27,9 @@ public class LoginActivity extends AppCompatActivity {
         final String ACTIVITY_NAME = "CreateActivity";
         Log.i(ACTIVITY_NAME, "In onCreate()");
 
-        user = (EditText) findViewById(R.id.login1);
-        pass = (EditText) findViewById(R.id.password1);
-        login = (Button) findViewById(R.id.LoginButton);
+        user = findViewById(R.id.login1);
+        pass = findViewById(R.id.password1);
+        login = findViewById(R.id.LoginButton);
         sharedPreferences = getSharedPreferences("loginref",MODE_PRIVATE);
         editor = sharedPreferences.edit();
         login.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +51,8 @@ public class LoginActivity extends AppCompatActivity {
         editor.putString("username",username);
         editor.commit();
 
-        Toast.makeText(this,"Enter",Toast.LENGTH_LONG);
+        Intent myIntent = new Intent(LoginActivity.this, StartActivity.class);
+        this.startActivity(myIntent);
 
 
     }
@@ -86,8 +87,4 @@ public class LoginActivity extends AppCompatActivity {
         Log.i(ACTIVITY_NAME, "In onDestroy()");
     }
 
-    public void onClickLogIn(View view) {
-        Intent myIntent = new Intent(this, StartActivity.class);
-        this.startActivity(myIntent);
-    }
 }

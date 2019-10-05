@@ -8,7 +8,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.List;
+
 public class StartActivity extends AppCompatActivity {
+
+    Button loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +20,25 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final String ACTIVITY_NAME = "CreateActivity";
         Log.i(ACTIVITY_NAME, "In onCreate()");
+
+        loginButton = findViewById(R.id.LoginButton);
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View view) {
+                Intent intent = new Intent(StartActivity.this, ListItemsActivity.class);
+                startActivityForResult(intent, 10);
+
+            }
+        });
+    }
+    @Override
+    public void onActivityResult(int requestCode, int responseCode, Intent data) {
+        super.onActivityResult(requestCode, responseCode, data);
+        final String ACTIVITY_NAME = "onActivityResult!";
+
+        if (requestCode == 10) {
+            Log.i(ACTIVITY_NAME, "Returned to StartActivity.onActivityResult");
+        }
     }
 
     protected void onResume() {
