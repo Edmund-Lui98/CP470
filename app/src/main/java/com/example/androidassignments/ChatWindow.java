@@ -21,9 +21,8 @@ public class ChatWindow extends AppCompatActivity {
     EditText msg;
     Button send;
 
-    ArrayList<String> msgs;
+    ArrayList<String> msgs = new ArrayList<String>();
 
-    ChatAdapter messageAdapter =new ChatAdapter( this );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +33,7 @@ public class ChatWindow extends AppCompatActivity {
         msg = findViewById(R.id.msg);
         send = findViewById(R.id.send);
 
+        final ChatAdapter messageAdapter =new ChatAdapter( this );
         lst.setAdapter (messageAdapter);
 
         send.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +44,11 @@ public class ChatWindow extends AppCompatActivity {
                 msg.setText("");
             }
         });
+
+
+
+
+
 
     }
     private class ChatAdapter extends ArrayAdapter<String> {
@@ -62,11 +67,14 @@ public class ChatWindow extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             LayoutInflater inflater = ChatWindow.this.getLayoutInflater();
             View result = null ;
-            if(position%2 == 0)
+            if(position%2 == 0) {
                 result = inflater.inflate(R.layout.chat_row_incoming, null);
-            else
+
+            }else {
                 result = inflater.inflate(R.layout.chat_row_outgoing, null);
-            TextView message = (TextView)result.findViewById(R.id.msg);
+
+            }
+            TextView message = result.findViewById(R.id.msg);
             message.setText(getItem(position)); // get the string at position
             return result;
 

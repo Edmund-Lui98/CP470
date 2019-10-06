@@ -21,30 +21,11 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final String ACTIVITY_NAME = "CreateActivity";
         Log.i(ACTIVITY_NAME, "In onCreate()");
-
-        loginButton = findViewById(R.id.LoginButton);
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick (View view) {
-                Intent intent = new Intent(StartActivity.this, ListItemsActivity.class);
-                startActivityForResult(intent, 10);
-
-            }
-        });
-
-
-        start_chat = findViewById(R.id.start_chat);
-        start_chat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick (View view) {
-                enter_chat_window();
-            }
-        });
     }
 
     public void enter_chat_window() {
-        Intent myIntent = new Intent(StartActivity.this, LoginActivity.class);
-        this.startActivity(myIntent);
+        Intent myIntent = new Intent(StartActivity.this, ChatWindow.class);
+        startActivity(myIntent);
     }
 
     @Override
@@ -89,6 +70,11 @@ public class StartActivity extends AppCompatActivity {
 
     public void onClickLogIn(View view) {
         Intent myIntent = new Intent(this, ListItemsActivity.class);
+        this.startActivity(myIntent);
+    }
+
+    public void onClickEnterChat(View view) {
+        Intent myIntent = new Intent(this, ChatWindow.class);
         this.startActivity(myIntent);
     }
 }

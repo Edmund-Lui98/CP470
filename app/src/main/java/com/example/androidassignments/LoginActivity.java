@@ -18,7 +18,6 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
-    Boolean saveLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
