@@ -32,14 +32,21 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
+
         start_chat = findViewById(R.id.start_chat);
         start_chat.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Log.i(ACTIVITY_NAME, "User clicked Start Chat");
+            public void onClick (View view) {
+                enter_chat_window();
             }
         });
     }
+
+    public void enter_chat_window() {
+        Intent myIntent = new Intent(StartActivity.this, LoginActivity.class);
+        this.startActivity(myIntent);
+    }
+
     @Override
     public void onActivityResult(int requestCode, int responseCode, Intent data) {
         super.onActivityResult(requestCode, responseCode, data);
