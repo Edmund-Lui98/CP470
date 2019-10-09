@@ -45,11 +45,6 @@ public class ChatWindow extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
     }
     private class ChatAdapter extends ArrayAdapter<String> {
         public ChatAdapter(Context ctx) {
