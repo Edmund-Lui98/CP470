@@ -17,4 +17,6 @@
     <string name="exit">sortant</string>
     <string name="buttonx">Button</string>
     <string name="start_chat">Démarrer la discussion</string>
+    <string name="title_activity_test_toolbar">TestToolbar</string>
+    <string name="testToolbar">Test Toolbar</string>
 </resources>

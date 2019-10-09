@@ -77,4 +77,9 @@ public class StartActivity extends AppCompatActivity {
         Intent myIntent = new Intent(this, ChatWindow.class);
         this.startActivity(myIntent);
     }
+
+    public void onClickTestToolbar(View view) {
+        Intent myIntent = new Intent(this, TestToolbar.class);
+        this.startActivity(myIntent);
+    }
 }

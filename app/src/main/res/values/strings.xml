@@ -30,4 +30,5 @@
     <string name="buttonx">Button</string>
     <string name="start_chat">Start Chat</string>
     <string name="title_activity_test_toolbar">TestToolbar</string>
+    <string name="testToolbar">Test Toolbar</string>
 </resources>
