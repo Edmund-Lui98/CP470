@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/search"
+        android:title="One"
+        android:icon="@drawable/search"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+    <item android:id="@+id/trash"
+        android:title="One"
+        android:icon="@drawable/trash"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+    <item android:id="@+id/refresh"
+        android:title="One"
+        android:icon="@drawable/refresh"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
+
+</menu>
