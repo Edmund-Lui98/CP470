@@ -8,6 +8,8 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 public class TestToolbar extends AppCompatActivity {
@@ -28,5 +30,12 @@ public class TestToolbar extends AppCompatActivity {
             }
         });
     }
+    public boolean onCreateOptionsMenu (Menu m) {
+        getMenuInflater().inflate(R.menu.toolbarmenu, m );
+        return true;
+    }
 
+    public boolean onOptionsItemSelected(MenuItem mi) {
+
+    }
 }
