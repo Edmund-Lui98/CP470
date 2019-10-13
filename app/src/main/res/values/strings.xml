@@ -32,4 +32,7 @@
     <string name="title_activity_test_toolbar">TestToolbar</string>
     <string name="testToolbar">Test Toolbar</string>
     <string name="toolbar_dialogTitle">Do you want to go back?</string>
+
+    <!--cust dialog layout-->
+    <string name="newMsg">New Message</string>
 </resources>
