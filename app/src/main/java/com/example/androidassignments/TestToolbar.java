@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class TestToolbar extends AppCompatActivity {
 
@@ -69,16 +70,16 @@ public class TestToolbar extends AppCompatActivity {
             case R.id.search:
                 Log.d("Toolbar", "search selected");
 
-
                 AlertDialog.Builder build = new AlertDialog.Builder(TestToolbar.this);
                 LayoutInflater inflater = this.getLayoutInflater();
+                final View v = inflater.inflate(R.layout.cust_dialog, null);
 
-                build.setView(inflater.inflate(R.layout.cust_dialog, null))
+                build.setView(v)
                         // Add action buttons
                         .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
-                                EditText msg = findViewById(R.id.newMsg);
+                                EditText msg = v.findViewById(R.id.newMsg);
                                 CharSequence enterMsg = msg.getText().toString();
 
                                 Snackbar.make(findViewById(R.id.coordinatorLayout),enterMsg, Snackbar.LENGTH_LONG).setAction("Action", null).show();
@@ -89,6 +90,9 @@ public class TestToolbar extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int id) {
                             }
                         }).show();
+            case R.id.settings:
+                Log.d("Toolbar", "settings selected");
+                Toast.makeText(TestToolbar.this,"Version 1.0, by Edmund Lui",Toast.LENGTH_LONG).show();
                 break;
         }
         return true;
