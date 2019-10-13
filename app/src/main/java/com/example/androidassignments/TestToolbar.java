@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class TestToolbar extends AppCompatActivity {
 
@@ -89,6 +90,9 @@ public class TestToolbar extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int id) {
                             }
                         }).show();
+            case R.id.settings:
+                Log.d("Toolbar", "settings selected");
+                Toast.makeText(TestToolbar.this,"Version 1.0, by Edmund Lui",Toast.LENGTH_LONG).show();
                 break;
         }
         return true;
