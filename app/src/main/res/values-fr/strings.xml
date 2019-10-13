@@ -19,4 +19,6 @@
     <string name="start_chat">Démarrer la discussion</string>
     <string name="title_activity_test_toolbar">TestToolbar</string>
     <string name="testToolbar">Test Toolbar</string>
+    <string name="toolbar_dialogTitle">Veux-tu y retourner?</string>
+
 </resources>

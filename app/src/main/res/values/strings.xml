@@ -3,32 +3,33 @@
     <string name="app_name">AndroidAssignments</string>
 
     <!--login activity-->
-
-    <!--start activity-->
-
-    <!--list items activity-->
-
-    <!--chat window activity-->
-
-    <!-- chat row outgoing thing-->
-
-    <!-- sort these -->
-    <string name="hello_world">Hello World!</string>
-    <string name="ButtonText">I\'m a button</string>
     <string name="loginButton">login</string>
     <string name="password">password</string>
+
+    <!--start activity-->
+    <string name="hello_world">Hello World!</string>
+    <string name="ButtonText">I\'m a button</string>
+
+    <!--list items activity-->
     <string name="radioButton">radioButton</string>
     <string name="checkBox">checkBox</string>
     <string name="switch1">what does this do?</string>
     <string name="dialog_message">Are you sure you want to quit?</string>
-    <string name="dialog_title">Exit</string>
     <string name="ok">yes</string>
     <string name="cancel">no</string>
+    <string name="dialog_title">Exit</string>
     <string name="switch_on">Switch is ON</string>
     <string name="switch_off">Switch is OFF</string>
     <string name="exit">exiting</string>
-    <string name="buttonx">Button</string>
+
+    <!--chat window activity-->
     <string name="start_chat">Start Chat</string>
+
+    <!-- chat row outgoing thing-->
+    <string name="buttonx">Button</string>
+
+    <!--TestToolbar activity-->
     <string name="title_activity_test_toolbar">TestToolbar</string>
     <string name="testToolbar">Test Toolbar</string>
+    <string name="toolbar_dialogTitle">Do you want to go back?</string>
 </resources>
