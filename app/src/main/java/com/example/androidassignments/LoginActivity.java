@@ -23,27 +23,23 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         final String ACTIVITY_NAME = "CreateActivity";
         Log.i(ACTIVITY_NAME, "In onCreate()");
 
         user = findViewById(R.id.login1);
         pass = findViewById(R.id.password1);
         login = findViewById(R.id.LoginButton);
+
         sharedPreferences = getSharedPreferences("loginref",MODE_PRIVATE);
         editor = sharedPreferences.edit();
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                login();
-            }
-        });
 
         user.setText(sharedPreferences.getString("username",null));
 
     }
 
 
-    public void login() {
+    public void login(View view) {
         String username = user.getText().toString();
 
         editor.putBoolean("savelogin",true);

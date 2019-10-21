@@ -6,14 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-
-import java.util.List;
 
 public class StartActivity extends AppCompatActivity {
 
-    Button loginButton;
-    Button start_chat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +16,6 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final String ACTIVITY_NAME = "CreateActivity";
         Log.i(ACTIVITY_NAME, "In onCreate()");
-    }
-
-    public void enter_chat_window() {
-        Intent myIntent = new Intent(StartActivity.this, ChatWindow.class);
-        startActivity(myIntent);
     }
 
     @Override
