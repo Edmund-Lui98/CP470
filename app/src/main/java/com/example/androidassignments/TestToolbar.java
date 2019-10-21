@@ -28,9 +28,9 @@ public class TestToolbar extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                fab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
                 Snackbar.make(view, "idk what to write", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
@@ -97,4 +97,5 @@ public class TestToolbar extends AppCompatActivity {
         }
         return true;
     }
+
 }
