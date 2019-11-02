@@ -21,6 +21,8 @@ public class ChatWindow extends AppCompatActivity {
     EditText msg;
     Button send;
 
+    ChatDatabaseHelper myDb;
+
     ArrayList<String> msgs = new ArrayList<String>();
 
 
@@ -32,6 +34,8 @@ public class ChatWindow extends AppCompatActivity {
         lst = findViewById(R.id.lst);
         msg = findViewById(R.id.msg);
         send = findViewById(R.id.send);
+
+        myDb = new ChatDatabaseHelper(this);
 
         final ChatAdapter messageAdapter =new ChatAdapter( this );
         lst.setAdapter (messageAdapter);
