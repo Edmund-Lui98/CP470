@@ -6,9 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
-public class StartActivity extends AppCompatActivity {
-
+public class StartActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+    Spinner dropDown;
+    public static String selected_city;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +20,23 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final String ACTIVITY_NAME = "CreateActivity";
         Log.i(ACTIVITY_NAME, "In onCreate()");
+
+        dropDown = findViewById(R.id.dropDown);
+
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(StartActivity.this,
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.cities));
+        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dropDown.setAdapter(myAdapter);
+        dropDown.setOnItemSelectedListener(this);
+    }
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        selected_city = parent.getItemAtPosition(position).toString();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+        return;
     }
 
     @Override
@@ -70,6 +91,10 @@ public class StartActivity extends AppCompatActivity {
 
     public void onClickTestToolbar(View view) {
         Intent myIntent = new Intent(this, TestToolbar.class);
+        this.startActivity(myIntent);
+    }
+    public void onClickWeatherForecast(View view) {
+        Intent myIntent = new Intent(this, WeatherForecast.class);
         this.startActivity(myIntent);
     }
 }
