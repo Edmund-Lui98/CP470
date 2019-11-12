@@ -19,7 +19,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import static com.example.androidassignments.ChatDatabaseHelper.DATABASE_NAME;
 import static com.example.androidassignments.ChatDatabaseHelper.KEY_MESSAGE;
 import static com.example.androidassignments.ChatDatabaseHelper.TABLE_NAME;
 

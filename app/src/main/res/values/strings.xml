@@ -35,4 +35,19 @@
 
     <!--cust dialog layout-->
     <string name="newMsg">New Message</string>
+
+    <!--Weather forecast layout-->
+    <string name="weater_forecast">Weater Forecast</string>
+    <string-array name="cities">
+        <item>Toronto</item>
+        <item>Montreal</item>
+        <item>Vancouver</item>
+        <item>Calgary</item>
+        <item>Edmonton</item>
+        <item>Winnipeg</item>
+        <item>Hamilton</item>
+        <item>London</item>
+        <item>Victoria</item>
+        <item>Windsor</item>
+    </string-array>
 </resources>
