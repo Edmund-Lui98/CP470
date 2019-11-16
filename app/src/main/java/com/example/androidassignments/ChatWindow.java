@@ -14,8 +14,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -33,6 +35,8 @@ public class ChatWindow extends AppCompatActivity {
     ArrayList<String> msgs = new ArrayList<>();
 
     final static String ACTIVITY_NAME = "ChatWindow";
+
+    FrameLayout x;
 
 
     @Override
@@ -72,6 +76,15 @@ public class ChatWindow extends AppCompatActivity {
             msgs.add(x);
             Log.i(ACTIVITY_NAME, "SQL MESSAGE: " + x);
         }
+
+        x = findViewById(R.id.frame);
+        String s;
+        if (x == null) {
+            s = "It didnt load";
+        } else {
+            s = "It loaded ";
+        }
+        Toast.makeText(this,s,Toast.LENGTH_LONG).show();
 
     }
     private class ChatAdapter extends ArrayAdapter<String> {

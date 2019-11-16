@@ -22,6 +22,7 @@
     <string name="toolbar_dialogTitle">Veux-tu y retourner?</string>
     <string name="newMsg">nouveau message</string>
     <string name="weater_forecast">Prévisions météorologiques</string>
+    <string name="del">Supprimer ce message </string>
 
 
 </resources>

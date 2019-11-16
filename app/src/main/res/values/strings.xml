@@ -50,4 +50,7 @@
         <item>Victoria</item>
         <item>Windsor</item>
     </string-array>
+
+    <!--Weather forecast layout-->
+    <string name="del">Delete this message</string>
 </resources>
