@@ -32,7 +32,7 @@ public class ChatWindow extends AppCompatActivity {
 
     ChatDatabaseHelper db;
 
-    ArrayList<String> msgs = new ArrayList<>();
+    public static ArrayList<String> msgs = new ArrayList<>();
 
     final static String ACTIVITY_NAME = "ChatWindow";
 
@@ -98,6 +98,9 @@ public class ChatWindow extends AppCompatActivity {
 
         public String getItem(int position) {
             return msgs.get(position);
+        }
+        public long getItemId(int position) {
+            return long;
         }
 
         public View getView(int position, View convertView, ViewGroup parent) {
